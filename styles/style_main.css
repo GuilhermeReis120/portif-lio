@@ -1,1 +1,65 @@
 @import url(fonts/fonts_style.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --cor-primaria: #007bff; /* Azul vibrante */
+  --cor-secundaria: #003366; /* Azul escuro / marinho */
+  --cor-fundo: #0d0d0d; /* Preto elegante */
+  --cor-texto: #e6e6e6; /* Texto principal - cinza claro */
+  --cor-texto-secundario: #b0b0b0; /* Texto secundário - cinza médio */
+  --cor-destaque: #00bfff; /* Azul claro neon - hover/destaques */
+  --cor-erro: #cc3300; /* Vermelho escuro - mensagens de erro */
+  --cor-sucesso: #33cc99; /* Verde suave - mensagens de sucesso */
+  --cor-borda: #2c2c2c; /* Cinza escuro - bordas e sombras */
+}
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+.navBar {
+  position: fixed;
+  top: 0;
+  background-color: rgba(15, 23, 42, 0.8);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
+}
+.menuNavBar {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+.menuLink {
+  position: relative;
+  text-decoration: none;
+  color: var(--cor-texto-secundario);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0.5rem;
+}
+.menuLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--cor-destaque);
+  transition: width 0.5s ease;
+}
+.menuLink:hover::after {
+  width: 100%;
+}
+.fotoPerfil {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 20px var(--cor-destaque); /* Ex: #00BFFF */
+  border-radius: 50%;
+}
