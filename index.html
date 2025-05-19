@@ -59,7 +59,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/HTML5.png" alt=""></div>
           <h3>HTML e CSS: ambientes e estrutura</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Css.png" alt=""></div>
           <h3>Estilos modernos com CSS</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -75,7 +75,7 @@
           <div class="icon"></i><img class="icon" src="/styles/icons/javascript.png" alt=""></div>
           <h3>Lógica e programação em JavaScript</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -83,7 +83,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Github.png" alt=""></div>
           <h3>Versionamento com Git e GitHub</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -91,7 +91,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/React.png" alt=""></div>
           <h3>Interfaces com React</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -99,7 +99,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Scrum.png" alt=""></i></div>
           <h3>Gestão ágil com Scrum</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -107,7 +107,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Programação.png" alt=""></div>
           <h3>Começando na Programação</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -117,7 +117,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/HTML5.png" alt=""></div>
           <h3>HTML e CSS: ambientes e estrutura</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Css.png" alt=""></div>
           <h3>Estilos modernos com CSS</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -133,7 +133,7 @@
           <div class="icon"></i><img class="icon" src="/styles/icons/javascript.png" alt=""></div>
           <h3>Lógica e programação em JavaScript</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -141,7 +141,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Github.png" alt=""></div>
           <h3>Versionamento com Git e GitHub</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -149,7 +149,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/React.png" alt=""></div>
           <h3>Interfaces com React</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -157,7 +157,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Scrum.png" alt=""></i></div>
           <h3>Gestão ágil com Scrum</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -165,7 +165,7 @@
           <div class="icon"><img class="icon" src="/styles/icons/Programação.png" alt=""></div>
           <h3>Começando na Programação</h3>
           <div class="card-footer">
-            <span>Alura</span>
+            <span>ALURA</span>
           </div>
         </div>
 
@@ -206,17 +206,34 @@
   </section>
   <section id="contatos" class="contatos">
     <h2 id="contatosTitulo" class="contatosTitulo">Entre em Contato</h2>
-    <form class="formularioContato" id="formulario">
+    <form class="formularioContato" id="formulario" onsubmit="enviarMensagem(event)">
       <div class="grupoForm">
-        <input placeholder="Nome" class="campoForm">
+        <input placeholder="Nome" class="campoForm" id="nome">
       </div>
       <div class="grupoForm">
-        <textarea placeholder="Digite sua Mensagem" class="campoForm"></textarea>
+        <textarea placeholder="Digite sua Mensagem" class="campoForm" rows="6" id="mensagem"></textarea>
       </div>
       <button type="submit" class="botaoForm">Enviar WhatApp</button>
     </form>
   </section>
-  <script ss rc="/js/app.js" defer></script>
+  <script>
+    function enviarMensagem(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome');
+      const mensagem = document.getElementById('mensagem');
+      const telefone = '5511991383461';
+
+      const texto = `Olá, me chamo ${nome.value}, ${mensagem.value}`;
+      const msgformatada = encodeURIComponent(texto);
+
+      const url = `https://wa.me/${telefone}?text=${msgformatada}`;
+
+      window.open(url, '_blank');
+
+      alert('Mensagem enviada com sucesso!');
+    }
+
+  </script>
 </body>
 
 </html>
